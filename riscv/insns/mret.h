@@ -6,6 +6,7 @@ reg_t prev_virt = get_field(s, MSTATUS_MPV);
 s = set_field(s, MSTATUS_MIE, get_field(s, MSTATUS_MPIE));
 s = set_field(s, MSTATUS_MPIE, 1);
 s = set_field(s, MSTATUS_MPP, PRV_U);
+s = set_field(s, MSTATUS_MPRV, 0);
 p->set_csr(CSR_MSTATUS, s);
 p->set_privilege(prev_prv);
 p->set_virt(prev_virt);
